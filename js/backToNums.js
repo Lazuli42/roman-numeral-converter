@@ -9,30 +9,35 @@ $("#converter").submit(function(event) {
 
   var arabicNumbers = [];
 
-  var I = ["I", 1];
-  var V = 5;
-  var X = 10;
-  var L = 50;
-  var C = 100;
-  var D = 500;
-  var M = 1000;
+  var total = 0;
 
-
+  var arabicConverter = function(romNum1, romNum2, romNum3, num1, num4, num5, num9) {
     for (i=0; i<=characters.length; i++) {
-      if ((characters[i] === "I") && (characters[i+1] === "V")) {
-        arabicNumbers.push(4)
+      if ((characters[i] === romNum1) && (characters[i+1] === romNum2)) {
+        arabicNumbers.push(num4)
       }
-      else if ((characters[i] === "I") && (characters[i+1] === "X")) {
-        arabicNumbers.push(9)
+      else if ((characters[i] === romNum1) && (characters[i+1] === romNum3)) {
+        arabicNumbers.push(num9)
       }
-      else if (characters[i] === "I") {
-        arabicNumbers.push(1);
+      else if (characters[i] === romNum1) {
+        arabicNumbers.push(num1);
       }
-      else if (characters[i] === "V") {
-        arabicNumbers.push(5)
+      else if ((characters[i] === romNum2) && (characters[i-1] != romNum1)) {
+        arabicNumbers.push(num5)
       }
     }
+  }
+  arabicConverter("M", "", "", 1000, "", "", "")
+  arabicConverter("C", "D", "M", 100, 400, 500, 900);
+  arabicConverter("X", "L", "C", 10, 40, 50, 90);
+  arabicConverter("I", "V", "X", 1, 4, 5, 9);
+
   console.log(arabicNumbers);
-  var total = arabicNumbers.join("+");
+
+  for (i=0; i<=arabicNumbers.length; i++) {
+    total += arabicNumbers[i] << 0;
+
+  }
+
   console.log(total);
 });
