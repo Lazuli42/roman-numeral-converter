@@ -1,15 +1,14 @@
-$("#converter").submit(function(event) {
+$("#fromRoman").submit(function(event) {
   event.preventDefault();
   $(".results").empty();
 
-  var inputtedNum = $("input#arabicNum").val();
+  var inputtedNum = $("input#romanNum").val();
   var upperCase = inputtedNum.toUpperCase();
   var characters = upperCase.split("");
-  console.log(characters);
-
   var arabicNumbers = [];
-
   var total = 0;
+
+
 
   var arabicConverter = function(romNum1, romNum2, romNum3, num1, num4, num5, num9) {
     for (i=0; i<=characters.length; i++) {
@@ -36,8 +35,7 @@ $("#converter").submit(function(event) {
 
   for (i=0; i<=arabicNumbers.length; i++) {
     total += arabicNumbers[i] << 0;
-
   }
-
+  $(".total").text(total);
   console.log(total);
 });

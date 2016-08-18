@@ -18,6 +18,11 @@ input {
   font-size: 24px;
 }
 
+.total {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
 h1 {
   margin-top: 100px;
   margin-bottom: 25px;

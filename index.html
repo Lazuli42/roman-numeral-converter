@@ -14,19 +14,34 @@
   <body>
     <div class="container-fluid text-center">
       <h1 class="text-center">Roman Numeral Converter</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <form id="converter">
+            <div class="form-group">
+              <label for="arabicNum"></label>
+              <input type="numbers" class="form-control center-block" id="arabicNum" placeholder="Enter a number">
+            </div>
 
-      <form id="converter">
-        <div class="form-group">
-          <label for="arabicNum"></label>
-          <input type="numbers" class="form-control center-block" id="arabicNum" placeholder="Enter a number">
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+          </form>
+
+          <p class="results">
+          </p>
         </div>
+        <div class="col-md-6">
+          <form id="fromRoman">
+            <div class="form-group">
+              <label for="romanNum"></label>
+              <input type="text" class="form-control center-block" id="romanNum" placeholder="Enter a roman numeral">
+            </div>
 
-        <button type="submit" class="btn btn-success btn-lg">Submit</button>
-      </form>
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+          </form>
 
-      <p class="results">
-      </p>
-
+          <p class="total">
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -34,5 +49,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/backToNums.js"></script>
   </body>
 </html>
