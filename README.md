@@ -1,8 +1,6 @@
 Specs
 
-0. If the user inputs 0, return nothing. 
-1. If the user enters a number that is equal to the exact value of a roman numeral, that roman numeral should be returned.
-Example Input: 5  Example Output: V
+1. If the user inputs 0, return nothing. 
 2. This program will convert numbers up to 3 into roman numerals containing I.
   ex. 3 > iii
 3. Numbers greater than 5 will start with V.
