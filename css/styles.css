@@ -1,0 +1,23 @@
+body {
+  background-color: green;
+}
+
+.container-fluid {
+  max-width: 8.5in;
+  background-color: white;
+  height: 100%;
+}
+
+input {
+  max-width: 400px;
+}
+
+.results {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+h1 {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
