@@ -21,74 +21,32 @@ $("#converter").submit(function(event) {
       $('.results').append("M") }
     }
 
-    if (hundred <= 3) {
-      for (i=1; i<=(hundred); i++) {
-      $('.results').append("C")
-      }
-    }
-    else if (hundred === 4) {
-      $('.results').append("CD")
-    }
-    else if (hundred >= 5) {
-      if (hundred === 5) {
-        $('.results').append("D")
-      }
+  var numberConverter = function(digit, romNum1, romNum2, romNum3) {
+    if (digit <= 3) {
+      for (i=1; i<=digit; i++) {
+      $('.results').append(romNum1) }
 
-      else if ((hundred >= 5) && (hundred != 9)) {
-        $('.results').append("D")
-        for (i=6; i<=(hundred); i++) {
-          $('.results').append("C")
-        }
+    } else if (digit === 4) {
+      $('.results').append(romNum1 + romNum2)
+
+    } else if (digit >= 5) {
+      if (digit === 5) {
+        $('.results').append(romNum2)
       }
-      else {
-          $('.results').append("CM")
-      }
-    }
-
-    if (ten <= 3) {
-      for (i=1; i<=ten; i++) {
-      $('.results').append("X") }
-
-    }
-    else if (ten === 4) {
-      $('.results').append("XL")
-    }
-    else if (ten >= 5) {
-      if (ten === 5) {
-        $('.results').append("L")
-      }
-
-      else if ((ten >= 5) && (ten != 9)) {
-        $('.results').append("L")
-        for (i=6; i<=ten; i++) {
-          $('.results').append("X")
-        }
-      }
-      else {
-          $('.results').append("XC")
-      }
-    }
-
-
-    if (one <= 3) {
-      for (i=1; i<=one; i++) {
-      $('.results').append("I") }
-
-    } else if (one === 4) {
-      $('.results').append("IV")
-
-    } else if (one >= 5) {
-      if (one === 5) {
-        $('.results').append("V")
-      }
-      else if ((one >= 5) && (one != 9)) {
-        $('.results').append("V")
-        for (i=6; i<=one; i++) {
-          $('.results').append("I") }
+      else if ((digit >= 5) && (digit != 9)) {
+        $('.results').append(romNum2)
+        for (i=6; i<=digit; i++) {
+          $('.results').append(romNum1) }
         }
         else {
-          $('.results').append("IX")
+          $('.results').append(romNum1 + romNum3)
         }
       }
     }
-  })
+
+    numberConverter(hundred, "C", "D", "M");
+    numberConverter(ten, "X", "L", "C");
+    numberConverter(one, "I", "V", "X");
+
+  }
+})
